@@ -1,0 +1,24 @@
+h1 {
+	text-align:left; 
+	color:blue; 
+	font-size:20px;
+}
+
+/*body {
+	background-image: url("images/berkeleycampus.jpg");
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+*/
+
+html { 
+  background: url("images/berkeleycampus.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+	
