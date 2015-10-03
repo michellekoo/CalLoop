@@ -7,11 +7,11 @@ class Subject(Model):
 
 
 class Assignment(Model):
-	name = CharField()
+	name = CharField(max_length=256)
 	due_date = DateTimeField()
 	due_in = DurationField()
 	subject = ForeignKey(Subject)
 
 class Day(Model):
 	name = CharField(choices=(('Monday'), ('Tuesday'), ('Wednesday'),
-		    ('Thursday'),) ('Friday'), ('Saturday'), ('Sunday'))
+		    ('Thursday'), ('Friday'), ('Saturday'), ('Sunday')))
