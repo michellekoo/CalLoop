@@ -15,19 +15,15 @@ class Day(Model):
 
 class Subject(Model):
 	name = CharField(max_length=256)
+	user = ManyToManyField(User)
 	weekday = ManyToManyField(Day)
 
 
 class Assignment(Model):
 	name = CharField(max_length=256)
+	user = ManyToManyField(User)
 	due_date = DateTimeField()
 	due_in = DurationField()
 	subject = ForeignKey(Subject)
 
-<<<<<<< HEAD
-class Day(Model):
-	name = CharField(choices=(('Monday'), ('Tuesday'), ('Wednesday'),
-		    ('Thursday'), ('Friday'), ('Saturday'), ('Sunday')))
-=======
 
->>>>>>> 0887f820c0c0919c9a6ead38d9ce2593e73143af
