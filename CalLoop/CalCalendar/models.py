@@ -1,17 +1,27 @@
 from django.db.models import *
 
 # Create your models here.
+class Day(Model):
+	days_of_week = (
+		('Mon', 'Monday'), 
+		('Tues', 'Tuesday'), 
+		('Wed','Wednesday'),
+		('Thurs','Thursday'), 
+		('Fri','Friday'), 
+		('Sat','Saturday'), 
+		('Sun','Sunday'),
+	)
+	name = CharField(max_length=256, choices=days_of_week)
+
 class Subject(Model):
-	name = CharField()
+	name = CharField(max_length=256)
 	weekday = ManyToManyField(Day)
 
 
 class Assignment(Model):
-	name = CharField()
+	name = CharField(max_length=256)
 	due_date = DateTimeField()
 	due_in = DurationField()
 	subject = ForeignKey(Subject)
 
-class Day(Model):
-	name = CharField(choices=(('Monday'), ('Tuesday'), ('Wednesday'),
-		    ('Thursday'),) ('Friday'), ('Saturday'), ('Sunday'))
+
