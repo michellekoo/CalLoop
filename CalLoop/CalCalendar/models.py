@@ -19,7 +19,7 @@ class Subject(Model):
 	user = ManyToManyField(User)
 	weekday = ManyToManyField(Day)
 
-
+#comment
 class Assignment(Model):
 	name = CharField(max_length=256)
 	user = ManyToManyField(User)
