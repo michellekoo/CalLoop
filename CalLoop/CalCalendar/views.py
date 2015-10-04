@@ -57,4 +57,4 @@ def sign_up(request):
 			user.last_name = lastname
 			user.first_name = firstname
 			user.save()
-	return HttpResponseRedirect("/")
+	return HttpResponse()

@@ -11,12 +11,12 @@
 			
 			<form class="form" method="post">
 				{% csrf_token %}
-				<input type="first" placeholder="First name">
-				<input type="last" placeholder="Last name">
-				<input type="email" placeholder="Email">
-				<input type="text" placeholder="Username">
-				<input type="password" placeholder="Password">
-				<input type="password" placeholder="Re-enter Password">
+				<input name="First name" type="first" placeholder="First name">
+				<input name="Last name" type="last" placeholder="Last name">
+				<input name="Email" type="email" placeholder="Email">
+				<input name="Username" type="text" placeholder="Username">
+				<input name="Password" type="password" placeholder="Password">
+				<input name="Re-enter Password" type="password" placeholder="Re-enter Password">
 				<button type="signup" formaction="signup/" id="signup-button">Sign Up</button>
 			</form>
 		</div>
