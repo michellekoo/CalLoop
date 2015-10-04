@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.contrib.auth import authenticate
 from django.http import HttpResponse
 from django.template import RequestContext
+from django.contrib import messages
 
 def index(request):
 	return render_to_response("index.html", context_instance=RequestContext(request,{}))
@@ -16,11 +17,13 @@ def user_home(request):
 def user_auth(request):
 	username = request.GET.get('Username', '0')
 	password = request.GET.get('Password', '1')
-	user = authenticate(username=username, password=password)
+	print(username)
+	print(password)
+	user = authenticate(username=username, password=password)	if user and user.is_active:
 	if user and user.is_active:
-		ret = HttpRequest()
-		ret.user = user
-		ret.path = r'^user_home/'
-		return ret
+		request.user = user
+		return user_home(request)
 	else:
-		return
+		response = render_to_response("index.html", context_instance=RequestContext(request,{}))
+		messages.add_message(request, "Invalid username or password")
+		return response
