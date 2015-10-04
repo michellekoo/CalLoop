@@ -19,7 +19,6 @@ class Subject(Model):
 	user = ManyToManyField(User)
 	#weekday = ForeignKey(Day)
 
-#comment
 class Assignment(Model):
 	name = CharField(max_length=256)
 	user = ManyToManyField(User)
