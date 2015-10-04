@@ -1,3 +1,42 @@
+<!-- {% load staticfiles %} -->
 <html>
-	<h1>Hello</h1>
+	<head>
+		<style>
+		
+		img.bg {
+		/* Set rules to fill background */
+		min-height: 100%;
+		min-width: 1024px;
+
+		/* Set up proportionate scaling */
+		width: 100%;
+		height: auto;
+
+		/* Set up positioning */
+		position: fixed;
+		top: 0;
+		left: 0;
+		}
+
+		@media screen and (max-width: 1024px){
+		img.bg {
+		left: 50%;
+		margin-left: -512px; }
+		}
+
+		#page-wrap { position: relative; width: 600px; margin: 50px auto; padding: 20px; background: #c9eef2; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+		p { font-size: 15px/2; font-family: 'Poiret One', cursive; margin: 0 0 30px 0; text-indent: 40px; }
+		</style>
+	</head>
+	<img src="../static/CalLoop/images/campus.jpg" class="bg">
+
+	<div id="page-wrap">
+		<body>
+			<h1>Hello, {{user.username}}</h1>
+			<h2>Here are your courses:</h2>
+			{% for course in courses %}
+				<ul>{{course.name}}</ul>
+			{% endfor %}
+		</body>
+	</div>
 </html>

@@ -17,7 +17,7 @@ class Day(Model):
 class Subject(Model):
 	name = CharField(max_length=256)
 	user = ManyToManyField(User)
-	weekday = ManyToManyField(Day)
+	#weekday = ForeignKey(Day)
 
 class Assignment(Model):
 	name = CharField(max_length=256)

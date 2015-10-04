@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+h1 {
+	text-align: center;
+}
+
+body {
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+}
