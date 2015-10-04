@@ -1,6 +1,7 @@
+{% load staticfiles %}
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href ="index.css">
+		<link rel="stylesheet" type="text/css" href ="{% static "CalLoop/index.css" %}">
 	</head>
 	<body>
 
@@ -11,7 +12,7 @@
 			<form class="form">
 				<input type="text" placeholder="Username">
 				<input type="password" placeholder="Password">
-				<button type="submit" formaction="r^'login/'" id="login-button">Login</button>
+				<button type="submit" formaction="login/" id="login-button">Login</button>
 			</form>
 		</div>
 		

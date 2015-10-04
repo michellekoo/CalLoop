@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from CalCalendar import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^user_home/$', views.user_home),
     url(r'^login/$', views.user_auth),
-    url(r'^$', views.index)
-]
+    url(r'^$', views.index),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
