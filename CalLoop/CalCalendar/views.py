@@ -24,3 +24,9 @@ def user_auth(request):
 		return ret
 	else:
 		return
+
+def new_account(request):
+	return render_to_response("newaccount.html", context_instance=RequestContext(request,{}))
+
+def sign_up(request):
+	return
