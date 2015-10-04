@@ -19,7 +19,7 @@ def user_auth(request):
 	password = request.GET.get('Password', '1')
 	print(username)
 	print(password)
-	user = authenticate(username=username, password=password)	if user and user.is_active:
+	user = authenticate(username=username, password=password)	
 	if user and user.is_active:
 		request.user = user
 		return user_home(request)
