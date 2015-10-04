@@ -10,6 +10,7 @@
 			<h1>Welcome to CalLoop</h1>
 			
 			<form class="form">
+				{% csrf_token %}
 				<input type="text" placeholder="Username">
 				<input type="password" placeholder="Password">
 				<button type="submit" formaction="login/" id="login-button">Login</button>
