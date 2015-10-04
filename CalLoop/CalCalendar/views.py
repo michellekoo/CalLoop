@@ -41,4 +41,17 @@ def new_account(request):
 	return render_to_response("newaccount.html", context_instance=RequestContext(request,{}))
 
 def sign_up(request):
-	return
+	if request.method == 'POST':
+		firstname = request.POST.get('First name')
+		lastname = request.POST.get('Last name')
+		email = request.POST.get('Email')
+		username = request.POST.get('Username')
+		password = request.POST.get('Password')
+		re_enter_password = request.POST.get('Re-enter Password')
+
+		if (password == re_enter_password):
+			user = User.objects.create_user(username, email, password)
+			user.last_name = lastname
+			user.first_name = firstname
+			user.save()
+	return HttpResponseRedirect("/")

@@ -9,7 +9,8 @@
 		<div class="container">
 			<h1>Join CalLoop</h1>
 			
-			<form class="form">
+			<form class="form" method="post">
+				{% csrf_token %}
 				<input type="first" placeholder="First name">
 				<input type="last" placeholder="Last name">
 				<input type="email" placeholder="Email">
