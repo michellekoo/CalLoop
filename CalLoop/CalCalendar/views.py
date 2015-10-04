@@ -27,3 +27,9 @@ def user_auth(request):
 		response = render_to_response("index.html", context_instance=RequestContext(request,{}))
 		messages.add_message(request, "Invalid username or password")
 		return response
+
+def new_account(request):
+	return render_to_response("newaccount.html", context_instance=RequestContext(request,{}))
+
+def sign_up(request):
+	return
